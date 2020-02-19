@@ -30,4 +30,7 @@ puede utilizar una seccion de codigo
 
 # About
 
-[//]: <> (Llene esta seccion con "Su nombre y correo")
+<!---
+Llene esta seccion con "Su nombre y correo"
+--->
+
