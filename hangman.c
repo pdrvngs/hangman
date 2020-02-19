@@ -44,11 +44,17 @@ const char* get_random_word(void){
 }
 
 
+/*
+Insert your code here
+*/
+
 int main(){
     // note como se invoca la funcion, la funcion se invoca de esta manera y se guarda en una variable
     const char* palabra_elegida = get_random_word();
     printf("%s\n",palabra_elegida);
-    // printf("%p\n", &palabra_elegida );
-    // printf("%p\n", &word_collection[0] );
+
+    /*
+        Insert your code here
+    */
     return 0;
 }
