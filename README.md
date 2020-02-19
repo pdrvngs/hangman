@@ -28,6 +28,12 @@ make run => compilara su codigo y lo correra
 puede utilizar una seccion de codigo
 ```
 
+# Extra Information
+
+```
+Agregue aqui lo que usted considere como extra
+```
+
 # About
 
 <!---
