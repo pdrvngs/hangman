@@ -25,11 +25,11 @@ const char* get_random_word(void);
 // ! NO AGREGUE PALABRAS QUE CONTENGAN NUMEROS
 // ? este es un arreglo de strings, un arreglo de punteros ;)
 const char *word_collection[MAX_WORDS]= {
-                    "este","es","un","banco","de",
-                    "palabras","sientase","en","libertad",
-                    "de","agregar","la","cantidad","de",
-                    "palabras","que","usted","desee","hasta",
-                    "un","maximo","de","MAX_WORDS"
+                    "ferrari","porsche","marroquin","libertad","cerveza",
+                    "justicia","supercalifragilisticoespiralidoso","superheroe","circuito",
+                    "arduino","concatenar","facil","palabra","lamborghini",
+                    "banco","macroeconomia","destruccion","universidad","herigonza",
+                    "veintitres","python","java","adiviniar"
                     };
 
 /*
