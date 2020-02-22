@@ -94,6 +94,7 @@ int main(){
 
     }
 
+    // previous attempt at a recurring menu. Hasn't worked, trying switch/case instead.
     //while (menu() != 4) {
     //    int choice = menu();
     //    if (choice == 1) {
@@ -104,6 +105,8 @@ int main(){
     //        printf("3\n");
     //    }
     //}
+
+
     // comparemos 2 strings. puede remover estas lineas.
     // char str1[] = "abcd", str2[] = "abcd", str3[]="abCd";
     // printf("strcmp(str1, str2) = %d\n", strcmp(str1,str2));
