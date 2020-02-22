@@ -18,11 +18,11 @@ make run => compilara su codigo y lo correra
 
 Para jugar, solo tiene que abrir su terminal y copiar el siguiente codigo
 <br>_________________________________________________________
-######mac/linux <br>
+###### mac/linux <br>
 ```make run hangman.c```
 
 
-######Navegación del Menu
+###### Navegación del Menu
 1. Comenzara el juego y tendra que adivinar una palabra
 2. Lo llevara a ver las instrucciones del juego
 3. Creditos a los creadores, librerias usadas, etc.
@@ -40,7 +40,7 @@ Agregue aqui lo que usted considere como extra
 ```
 
 ## About
-######Contribuidores:
+###### Contribuidores:
 Luis Venegas - luisvenegas@ufm.edu<br>
 Daniel Cabrera - danielcabrera@ufm.edu 
 
