@@ -46,6 +46,28 @@ const char* get_random_word(void){
 }
 
 
+int menu(void){
+    int choice = 0;
+    printf("--- Menu --- \n"
+           "1. Comenzar Juego\n"
+           "2. Como Jugar\n"
+           "3. Creditos\n"
+           "4. Salir del Juego\n");
+
+
+    scanf("%d", &choice);
+    if(choice == 1){
+        return 1;
+    } else if(choice == 2){
+        return 2;
+    } else if (choice == 3) {
+        return 3;
+    } else if (choice == 4){
+        return 0;
+    }
+
+    return 0;
+}
 
 /*
 Insert your code here
@@ -56,6 +78,32 @@ int main(){
     const char* palabra_elegida = get_random_word();
     printf("%s\n",palabra_elegida);
 
+    switch(menu())
+    {
+        case 1:
+            printf("Comienza el juego");
+            break;
+        case 2:
+            printf("Instrucciones de como jugar, opcion de regresar");
+            break;
+        case 3:
+            printf("ABOUT page");
+            break;
+        case 4:
+            break;
+
+    }
+
+    //while (menu() != 4) {
+    //    int choice = menu();
+    //    if (choice == 1) {
+    //        printf("1\n");
+    //    } else if (choice == 2){
+    //        printf("2\n");
+    //    } else if (choice == 3){
+    //        printf("3\n");
+    //    }
+    //}
     // comparemos 2 strings. puede remover estas lineas.
     // char str1[] = "abcd", str2[] = "abcd", str3[]="abCd";
     // printf("strcmp(str1, str2) = %d\n", strcmp(str1,str2));
