@@ -14,7 +14,7 @@
 // # FUNCTION PROTOTYPES
 // defina aqui todos los prototipos de funciones que vaya a implementar.
 const char* get_random_word(void);
-
+int menu(void);
 
 
 
@@ -45,7 +45,9 @@ const char* get_random_word(void){
     return word_collection[random_position];
 }
 
-
+// Menu function now runs constantly until the user chooses an option
+// Problems: Any input apart from integers will set off an infinite loop
+// Improvements: Functional, but not elegant.
 int menu(void){
     int choice = 0;
     printf("--- Menu --- \n"
@@ -54,18 +56,18 @@ int menu(void){
            "3. Creditos\n"
            "4. Salir del Juego\n");
 
-
-    scanf("%d", &choice);
-    if(choice == 1){
-        return 1;
-    } else if(choice == 2){
-        return 2;
-    } else if (choice == 3) {
-        return 3;
-    } else if (choice == 4){
-        return 0;
+    while(choice != 4) {
+        scanf("%d", &choice);
+        if (choice == 1) {
+            return 1;
+        } else if (choice == 2) {
+            return 2;
+        } else if (choice == 3) {
+            return 3;
+        } else if (choice == 4) {
+            return 0;
+        } else {printf("Select a valid choice\n");}
     }
-
     return 0;
 }
 
@@ -78,16 +80,20 @@ int main(){
     const char* palabra_elegida = get_random_word();
     printf("%s\n",palabra_elegida);
 
+
+    // Currently the menu works as intended once. Have tried calling menu() and main()
+    // after each case, but it causes a slight bug in which the menu starts acting
+    // weird and not choosing the inputed option.
     switch(menu())
     {
         case 1:
-            printf("Comienza el juego");
+            printf("Comienza el juego\n");
             break;
         case 2:
-            printf("Instrucciones de como jugar, opcion de regresar");
+            printf("Instrucciones de como jugar, opcion de regresar\n");
             break;
         case 3:
-            printf("ABOUT page");
+            printf("ABOUT page\n");
             break;
         case 4:
             break;
