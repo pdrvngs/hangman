@@ -15,7 +15,8 @@
 // defina aqui todos los prototipos de funciones que vaya a implementar.
 const char* get_random_word(void);
 int menu(void);
-
+int juego(void);
+int menu_final(void); // opera con el resultado del juego. 1 si gano, 0 si perdio.
 
 
 // Global variables
@@ -32,6 +33,7 @@ const char *word_collection[MAX_WORDS]= {
                     "veintitres","python","java","adiviniar"
                     };
 
+int intentos = 10;
 /*
  ? function get_random_word(), no recibe argumentos porque trabajara con la variable global word_collection (banco de palabras)
  ? y devolvera una palabra aleatoria del banco de palabras
@@ -47,7 +49,6 @@ const char* get_random_word(void){
 
 // Menu function now runs constantly until the user chooses an option
 // Problems: Any input apart from integers will set off an infinite loop
-// Improvements: Functional, but not elegant.
 int menu(void){
     int choice = 0;
     printf("--- Menu --- \n"
@@ -71,9 +72,27 @@ int menu(void){
     return 0;
 }
 
-/*
-Insert your code here
-*/
+int juego(void){
+    /* Esta funcion pregunta por el nombre del jugador y manejara el juego.
+     "Ingrese su Nombre"
+     Jugador:
+     Intentos:
+     Palabra:
+
+     _ _ _ _ _ _ _ _
+
+     retorna 1 si gana (letra por letra o de una)
+     retorna 0 si pierde, ingresa 0
+
+     */
+    return 0;
+}
+
+
+int menu_final(void){
+    // dependiendo en el resultado de juego devuelve la pantalla de derrota o de victoria
+}
+
 
 int main(){
     // note como se invoca la funcion, la funcion se invoca de esta manera y se guarda en una variable
@@ -88,7 +107,7 @@ int main(){
     {
         case 1:
             printf("Comienza el juego\n");
-            break;
+            juego(); // corre el juego cuando es igual a 1
         case 2:
             printf("Instrucciones de como jugar, opcion de regresar\n");
             break;
@@ -100,7 +119,7 @@ int main(){
 
     }
 
-    // previous attempt at a recurring menu. Hasn't worked, trying switch/case instead.
+    /* previous attempt at a recurring menu. Hasn't worked, trying switch/case instead.
     //while (menu() != 4) {
     //    int choice = menu();
     //    if (choice == 1) {
@@ -110,7 +129,10 @@ int main(){
     //    } else if (choice == 3){
     //        printf("3\n");
     //    }
-    //}
+    }*/
+
+
+
 
 
     // comparemos 2 strings. puede remover estas lineas.
@@ -118,8 +140,5 @@ int main(){
     // printf("strcmp(str1, str2) = %d\n", strcmp(str1,str2));
     // printf("strcmp(str1, str2) = %d\n", strcmp(str1,str3));
 
-    /*
-        Insert your code here
-    */
     return 0;
 }
