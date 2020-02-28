@@ -71,6 +71,22 @@ int menu(void){
     }
     return 0;
 }
+void string_search(char palabra[], char buscar_esto){
+    printf("\n>\n");
+    int length = strlen(word);
+    printf("SEARCHING: %s %c\n", palabra, buscar_esto);
+    for (int i=0;i < length; i++){
+        if (buscar == palabra[i]){
+            palabra[i]='x';
+            printf("Found char: \'%c\' in palabra: \'%s\'  position: %d \ncrossing it out ...\n\n\n",buscar,palabra, i);
+        }
+        else {
+            
+        }
+    }
+
+    printf(">\n");
+}
 
 int juego(void){
     /* Esta funcion pregunta por el nombre del jugador y manejara el juego.
