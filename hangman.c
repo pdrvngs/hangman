@@ -47,6 +47,8 @@ const char* get_random_word(void){
     return word_collection[random_position];
 }
 
+palabras;
+
 // Menu function now runs constantly until the user chooses an option
 // Problems: Any input apart from integers will set off an infinite loop
 int menu(void){
