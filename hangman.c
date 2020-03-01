@@ -121,11 +121,12 @@ int main(){
     // Currently the menu works as intended once. Have tried calling menu() and main()
     // after each case, but it causes a slight bug in which the menu starts acting
     // weird and not choosing the inputed option.
-    switch(menu())
+    int menu_val = menu();
+    switch(menu_val)
     {
         case 1:
             printf("Comienza el juego\n");
-            juego(); // corre el juego cuando es igual a 1
+            //juego(); // corre el juego cuando es igual a 1
         case 2:
             printf("Instrucciones de como jugar, opcion de regresar\n");
             break;
