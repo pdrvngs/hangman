@@ -47,7 +47,6 @@ const char* get_random_word(void){
     return word_collection[random_position];
 }
 
-palabras;
 
 // Menu function now runs constantly until the user chooses an option
 // Problems: Any input apart from integers will set off an infinite loop
@@ -73,14 +72,14 @@ int menu(void){
     }
     return 0;
 }
-void string_search(char palabra[], char buscar_esto){
-    printf("\n>\n");
-    int length = strlen(word);
-    printf("SEARCHING: %s %c\n", palabra, buscar_esto);
+
+void buscar_letra(char palabra[], char buscar){
+    int length = strlen(palabra);
+    printf("Encontrando: %s %c\n", palabra, buscar);
     for (int i=0;i < length; i++){
         if (buscar == palabra[i]){
             palabra[i]='x';
-            printf("Found char: \'%c\' in palabra: \'%s\'  position: %d \ncrossing it out ...\n\n\n",buscar,palabra, i);
+            printf("Found char: \'%c\' in palabra: \'%s\'  position: %d \ncrossing it out ...\n\n\n",buscar, palabra, i);
         }
         else {
             
@@ -109,6 +108,7 @@ int juego(void){
 
 int menu_final(void){
     // dependiendo en el resultado de juego devuelve la pantalla de derrota o de victoria
+    return 0;
 }
 
 
