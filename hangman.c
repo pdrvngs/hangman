@@ -73,18 +73,43 @@ int menu(void){
     return 0;
 }
 
-void buscar_letra(char palabra[], char buscar){
+void buscar_letra(char palabra[]){
+    char underscored[50];
     int length = strlen(palabra);
-    printf("Encontrando: %s %c\n", palabra, buscar);
-    for (int i=0;i < length; i++){
-        if (buscar == palabra[i]){
-            palabra[i]='x';
-            printf("Found char: \'%c\' in palabra: \'%s\'  position: %d \ncrossing it out ...\n\n\n",buscar, palabra, i);
-        }
-        else {
-            
-        }
+    for(int i = 0; i < length; i++){
+        underscored[i] = '_';
     }
+
+    for(int i = 0; i < length; i++){
+        printf("%c", underscored[i]);
+        printf(" ");
+    }
+
+    printf("\n");
+    char buscar = ' ';
+    while(strcmp(palabra, underscored) != 0) {
+        printf("\nQue letra quiere buscar: ");
+        scanf(" %c", &buscar);
+        printf("Encontrando: %s %c\n", underscored, buscar);
+        for (int i = 0; i < length; i++) {
+            if (buscar == palabra[i]) {
+                underscored[i] = buscar;
+                printf("\nFound char: \'%c\' in palabra: \'%s\'  position: %d \ncrossing it out ...\n\n\n", buscar,
+                       underscored, i);
+            } else {
+
+            }
+
+        }
+        for (int i = 0; i < length; i++) {
+            printf("%c", underscored[i]);
+            printf(" ");
+        }
+        puts(palabra);
+        puts(underscored);
+
+    }
+
 }
 
 int juego(void){
@@ -113,6 +138,10 @@ int juego(void){
 
     puts(nombre);
 
+    char random_word[50];
+    strcpy(random_word, get_random_word());
+    buscar_letra(random_word);
+
 
     return 0;
 }
@@ -127,7 +156,7 @@ int menu_final(void){
 int main(){
     // note como se invoca la funcion, la funcion se invoca de esta manera y se guarda en una variable
     const char* palabra_elegida = get_random_word();
-    printf("%s\n",palabra_elegida);
+    //printf("%s\n",palabra_elegida);
 
 
     int menu_val = 0;
