@@ -67,7 +67,7 @@ int menu(void){
         } else if (choice == 3) {
             return 3;
         } else if (choice == 4) {
-            return 0;
+            return 4;
         } else {printf("Select a valid choice\n");}
     }
     return 0;
@@ -121,23 +121,22 @@ int main(){
     // Currently the menu works as intended once. Have tried calling menu() and main()
     // after each case, but it causes a slight bug in which the menu starts acting
     // weird and not choosing the inputed option.
-    int menu_val = menu();
-    switch(menu_val)
-    {
-        case 1:
-            printf("Comienza el juego\n");
-            //juego(); // corre el juego cuando es igual a 1
-        case 2:
-            printf("Instrucciones de como jugar, opcion de regresar\n");
-            break;
-        case 3:
-            printf("ABOUT page\n");
-            break;
-        case 4:
-            break;
-
+    int menu_val = 0;
+    while(menu_val != 4) {
+        menu_val = menu();
+        switch(menu_val) {
+            case 1:
+                printf("Comienza el juego\n");
+                //juego(); // corre el juego cuando es igual a 1
+                break;
+            case 2:
+                printf("Instrucciones de como jugar, opcion de regresar\n");
+                break;
+            case 3:
+                printf("ABOUT page\n");
+                break;
+        }
     }
-
     /* previous attempt at a recurring menu. Hasn't worked, trying switch/case instead.
     //while (menu() != 4) {
     //    int choice = menu();
