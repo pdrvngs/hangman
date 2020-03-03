@@ -85,8 +85,6 @@ void buscar_letra(char palabra[], char buscar){
             
         }
     }
-
-    printf(">\n");
 }
 
 int juego(void){
@@ -102,6 +100,20 @@ int juego(void){
      retorna 0 si pierde, ingresa 0
 
      */
+    char nombre[55];
+
+    printf("Como lo deberia llamar? ");
+
+    //fseek(stdin,0,SEEK_END); This works, but not recommended
+
+    // Recommended solution, double fgets, one picks up the trailing whitespace/newline caused by scanf
+    // Using fgets because just gets is dangerous (for some reason)
+    fgets(nombre, 55, stdin);
+    fgets(nombre, 55, stdin);
+
+    puts(nombre);
+
+
     return 0;
 }
 
@@ -118,36 +130,30 @@ int main(){
     printf("%s\n",palabra_elegida);
 
 
-    // Currently the menu works as intended once. Have tried calling menu() and main()
-    // after each case, but it causes a slight bug in which the menu starts acting
-    // weird and not choosing the inputed option.
     int menu_val = 0;
     while(menu_val != 4) {
         menu_val = menu();
         switch(menu_val) {
             case 1:
                 printf("Comienza el juego\n");
-                //juego(); // corre el juego cuando es igual a 1
+                juego(); // corre el juego cuando es igual a 1
                 break;
             case 2:
-                printf("Instrucciones de como jugar, opcion de regresar\n");
+                printf("----------------------------\n");
+                printf("Para jugar, seleccione 1 en el menu e ingrese su nombre;\n");
+                printf("Esto iniciara el juego y tendras que adivinar la palabra\n");
+                printf("Lo unico que debes ingresar es una letra a la vez para adivinar.\n");
+                printf("Tendras 10 intentos (esto incluye letras correctas) para adivinar\n");
+                printf("----------------------------\n\n");
                 break;
             case 3:
-                printf("ABOUT page\n");
+                printf("==========================================\n");
+                printf("Creado por: Luis Venegas y Daniel Cabrera \n");
+                printf("==========================================\n\n");
                 break;
         }
     }
-    /* previous attempt at a recurring menu. Hasn't worked, trying switch/case instead.
-    //while (menu() != 4) {
-    //    int choice = menu();
-    //    if (choice == 1) {
-    //        printf("1\n");
-    //    } else if (choice == 2){
-    //        printf("2\n");
-    //    } else if (choice == 3){
-    //        printf("3\n");
-    //    }
-    }*/
+
 
 
 
