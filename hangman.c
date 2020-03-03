@@ -73,43 +73,51 @@ int menu(void){
     return 0;
 }
 
-void buscar_letra(char palabra[]){
+int buscar_letra(char palabra[]){
+    int tries = 0;
     char underscored[50];
     int length = strlen(palabra);
+    char buscar = ' ';
+
+    tries++;
+    printf("Intentos: %d : %d", tries, intentos);
+
+    // Creates a '_' version of the word. We'll be replacing letters in this one.
     for(int i = 0; i < length; i++){
         underscored[i] = '_';
     }
 
+    // Prints out underscored version
     for(int i = 0; i < length; i++){
         printf("%c", underscored[i]);
         printf(" ");
     }
 
     printf("\n");
-    char buscar = ' ';
-    while(strcmp(palabra, underscored) != 0) {
+
+    // Main body of the function, runs (intentos) times, asking for a letter each time.
+    while(tries < intentos) {
         printf("\nQue letra quiere buscar: ");
         scanf(" %c", &buscar);
-        printf("Encontrando: %s %c\n", underscored, buscar);
+
+        // Looks for the same index, compares to random word, if true, replaces underscore with letter.
         for (int i = 0; i < length; i++) {
             if (buscar == palabra[i]) {
                 underscored[i] = buscar;
-                printf("\nFound char: \'%c\' in palabra: \'%s\'  position: %d \ncrossing it out ...\n\n\n", buscar,
-                       underscored, i);
-            } else {
-
-            }
-
+                } else {}
         }
+
+        // Prints underscored again, with the modification.
         for (int i = 0; i < length; i++) {
             printf("%c", underscored[i]);
             printf(" ");
         }
-        puts(palabra);
-        puts(underscored);
+    } // END OF WHILE
 
-    }
-
+    // Checks if you guessed or not.
+    if(strcmp(underscored, palabra) == 0){
+        return 1;
+    } else {return 0;}
 }
 
 int juego(void){
@@ -141,6 +149,7 @@ int juego(void){
     char random_word[50];
     strcpy(random_word, get_random_word());
     buscar_letra(random_word);
+    printf("\n");
 
 
     return 0;
