@@ -78,25 +78,40 @@ int buscar_letra(char palabra[]){
     char underscored[50];
     int length = strlen(palabra);
     char buscar = ' ';
+    char nombre[55];
 
-    tries++;
-    printf("Intentos: %d : %d", tries, intentos);
+    printf("Como lo deberia llamar? ");
+    // Double fgets to pick up trailing whitespace due to scanf
+    fgets(nombre, 55, stdin);
+    fgets(nombre, 55, stdin);
+
 
     // Creates a '_' version of the word. We'll be replacing letters in this one.
     for(int i = 0; i < length; i++){
         underscored[i] = '_';
     }
 
-    // Prints out underscored version
+    /* Prints out underscored version
     for(int i = 0; i < length; i++){
         printf("%c", underscored[i]);
         printf(" ");
-    }
+    } */
 
     printf("\n");
 
     // Main body of the function, runs (intentos) times, asking for a letter each time.
-    while(tries < intentos) {
+    while(tries < intentos && strcmp(underscored, palabra) != 0) {
+        printf("Jugador: "); puts(nombre);
+        printf("Intentos: %d de %d\n", tries, intentos);
+        printf("Palabra: \n");
+
+        // Prints underscored.
+        for (int i = 0; i < length; i++) {
+            printf("%c", underscored[i]);
+            printf(" ");
+        }
+        printf("\n");
+
         printf("\nQue letra quiere buscar: ");
         scanf(" %c", &buscar);
 
@@ -107,15 +122,13 @@ int buscar_letra(char palabra[]){
                 } else {}
         }
 
-        // Prints underscored again, with the modification.
-        for (int i = 0; i < length; i++) {
-            printf("%c", underscored[i]);
-            printf(" ");
-        }
+        tries++;
+        printf("\n");
     } // END OF WHILE
 
     // Checks if you guessed or not.
     if(strcmp(underscored, palabra) == 0){
+        puts(palabra);
         return 1;
     } else {return 0;}
 }
@@ -133,18 +146,13 @@ int juego(void){
      retorna 0 si pierde, ingresa 0
 
      */
-    char nombre[55];
 
-    printf("Como lo deberia llamar? ");
 
     //fseek(stdin,0,SEEK_END); This works, but not recommended
 
     // Recommended solution, double fgets, one picks up the trailing whitespace/newline caused by scanf
     // Using fgets because just gets is dangerous (for some reason)
-    fgets(nombre, 55, stdin);
-    fgets(nombre, 55, stdin);
 
-    puts(nombre);
 
     char random_word[50];
     strcpy(random_word, get_random_word());
@@ -191,16 +199,5 @@ int main(){
                 break;
         }
     }
-
-
-
-
-
-
-    // comparemos 2 strings. puede remover estas lineas.
-    // char str1[] = "abcd", str2[] = "abcd", str3[]="abCd";
-    // printf("strcmp(str1, str2) = %d\n", strcmp(str1,str2));
-    // printf("strcmp(str1, str2) = %d\n", strcmp(str1,str3));
-
     return 0;
 }
