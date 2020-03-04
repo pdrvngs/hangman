@@ -125,10 +125,8 @@ int juego(void){
             if (buscar == palabra[i]) {
                 underscored[i] = buscar;
                 aciertos++;
-                tries--;
                 } else {}
         }
-
         tries++;
         printf("\n");
     } // END OF WHILE
