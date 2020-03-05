@@ -135,8 +135,15 @@ int juego(void){
     // Checks if you guessed or not.
     if(strcmp(underscored, palabra) == 0){
         puts(palabra);
+
+        //Aqui va el menu final ganador, Intentos, nombre, palabra: Y el ganaste
+
         return 1;
-    } else {return 0;}
+    } else {
+
+        // Aqui va el menu final perdedor, intentos 10/10, nombre y palabra. Perdiste
+
+        return 0;}
 }
 
 int menu_final(int gano){
