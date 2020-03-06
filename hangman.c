@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <math.h>
 // I need string functions, strcpy
 // https://www.programiz.com/c-programming/library-function/string.h
 #include <string.h>
@@ -55,6 +56,7 @@ void clearscreen()
 // Menu function now runs constantly until the user chooses an option
 // Problems: Any input apart from integers will set off an infinite loop
 int menu(void){
+    char nothing[3];
     int choice = 0;
     printf("--- Menu --- \n"
            "1. Comenzar Juego\n"
@@ -72,7 +74,12 @@ int menu(void){
             return 3;
         } else if (choice == 4) {
             return 4;
-        } else {printf("Select a valid choice\n");}
+        } else if (choice > 4 || choice < 0){
+            printf("Select a valid choice\n"); // avoids large integers
+        } else {
+            printf("Select a valid choice\n");
+            fgets(nothing, 3, stdin); // Checks for EOF caused by character input, avoids endless loop crash.
+        }
     }
     return 0;
 }
