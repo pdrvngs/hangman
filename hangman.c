@@ -18,6 +18,7 @@ const char* get_random_word(void);
 int menu(void);
 int juego(void);
 int menu_final(int gano); // opera con el resultado del juego. 1 si gano, 0 si perdio.
+void menu_opciones(void);
 
 
 // Global variables
@@ -34,7 +35,7 @@ const char *word_collection[MAX_WORDS]= {
                     "veintitres","python","java","adiviniar"
                     };
 
-int intentos = 10;
+int intentos = 20;
 /*
  ? function get_random_word(), no recibe argumentos porque trabajara con la variable global word_collection (banco de palabras)
  ? y devolvera una palabra aleatoria del banco de palabras
@@ -48,10 +49,12 @@ const char* get_random_word(void){
     return word_collection[random_position];
 }
 
+
 void clearscreen()
 {
     system("@cls||clear");
 }
+
 
 // Menu function now runs constantly until the user chooses an option
 // Problems: Any input apart from integers will set off an infinite loop
@@ -167,7 +170,7 @@ int menu_final(int gano){
         printf("Perdiste\nPresione ENTER para regresar al menu\n");
         fgets(nothing, 3, stdin);
         fgets(nothing, 3, stdin);
-        //clearscreen(); didnt work
+        clearscreen();
     }
 
     return 0;
@@ -187,17 +190,21 @@ int main(){
                 menu_final(resultado);
                 break;
             case 2:
+                printf("\033[1;34m");
                 printf("----------------------------\n");
                 printf("Para jugar, seleccione 1 en el menu e ingrese su nombre;\n");
                 printf("Esto iniciara el juego y tendras que adivinar la palabra\n");
                 printf("Lo unico que debes ingresar es una letra a la vez para adivinar.\n");
                 printf("Tendras 10 intentos (sin contar letras correctas) para adivinar\n");
                 printf("----------------------------\n\n");
+                printf("\033[0m");
                 break;
             case 3:
+                printf("\033[1;31m");
                 printf("==========================================\n");
                 printf("Creado por: Luis Venegas y Daniel Cabrera \n");
                 printf("==========================================\n\n");
+                printf("\033[0m");
                 break;
         }
     }
@@ -207,17 +214,18 @@ int main(){
 
 // Trabajo por hacer: 
 /*
- * Menu final ganaste / perdiste 
- * Checkear el input del menu principal y asegurar que solo se puedan ingresar numeros 
+ * Menu final ganaste / perdiste
  * Limpiar la pantalla, sea con comandos de terminal o lineas nuevas
- *
+
+ * Checkear el input del menu principal y asegurar que solo se puedan ingresar numeros TERMINADO!!!
  * Salir del juego al presionar 0 TERMINADO!!
- * 
+ *
  * Extra:
  * Agregar colores a la terminal 
  * Opcion de agregar palabras al banco +
  * opcion de cambiar el numero de intentos por el jugador 
- * menu de opciones 
+ * menu de opciones
+ * Mejorar el sistema de aciertos e intentos
  * 
  */
 
