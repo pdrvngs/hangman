@@ -82,7 +82,7 @@ int juego(void){
     int aciertos = 0;
     unsigned int length;
     char underscored[50];
-    char buscar;
+    char buscar = ' ';
     char nombre[55];
     char palabra[50];
     const char* random_word = get_random_word();
@@ -104,7 +104,7 @@ int juego(void){
     printf("\n\n");
 
     // Main body of the function, runs (intentos) times, asking for a letter each time.
-    while(tries < intentos && strcmp(underscored, palabra) != 0) {
+    while(tries < intentos && strcmp(underscored, palabra) != 0 && buscar != '0') {
         printf("Jugador: "); fputs(nombre, stdout);
         printf("Intentos: %d de %d\n", tries, intentos);
         printf("Aciertos: %d\n", aciertos);
@@ -203,7 +203,8 @@ int main(){
  * Menu final ganaste / perdiste 
  * Checkear el input del menu principal y asegurar que solo se puedan ingresar numeros 
  * Limpiar la pantalla, sea con comandos de terminal o lineas nuevas
- * Salir del juego al presionar 0
+ *
+ * Salir del juego al presionar 0 TERMINADO!!
  * 
  * Extra:
  * Agregar colores a la terminal 
