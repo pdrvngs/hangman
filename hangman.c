@@ -106,12 +106,14 @@ int juego(void){
     // gets random word from word bank, copies it to random_word, gets length
     strcpy(palabra, random_word);
     length = strlen(palabra);
-
+    printf("\033[0;34m");
     printf("Ingrese nombre del jugador ");
+    printf("\033[0m");
     // Double fgets to pick up trailing whitespace due to scanf
+    printf("\033[0;34m");
     fgets(nombre, 55, stdin);
     fgets(nombre, 55, stdin);
-
+    printf("\033[0m");
     // Creates a '_' version of the word. We'll be replacing letters in this one.
     for(int i = 0; i < length; i++){
         underscored[i] = '_';
