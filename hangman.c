@@ -193,7 +193,9 @@ int main(){
         menu_val = menu();
         switch(menu_val) {
             case 1:
+                printf("\033[1;34m");
                 printf("Comienza el juego\n");
+                printf("\033[0m");
                 resultado = juego(); // corre el juego cuando es igual a 1
                 menu_final(resultado);
                 break;
