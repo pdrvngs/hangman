@@ -102,7 +102,7 @@ int juego(void){
     strcpy(palabra, random_word);
     length = strlen(palabra);
 
-    printf("Como lo deberia llamar? ");
+    printf("Ingrese nombre del jugador ");
     // Double fgets to pick up trailing whitespace due to scanf
     fgets(nombre, 55, stdin);
     fgets(nombre, 55, stdin);
