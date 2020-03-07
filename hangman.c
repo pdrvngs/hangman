@@ -61,14 +61,19 @@ void clearscreen()
 int menu(void){
     char nothing[3];
     int choice = 0;
+    printf("\033[1;33m");
     printf("--- Menu --- \n"
            "1. Comenzar Juego\n"
            "2. Como Jugar\n"
            "3. Creditos\n"
            "4. Salir del Juego\n");
+    printf("\033[0m");
 
     while(choice != 4) {
+        printf("\033[0;33m");
+        printf("Ingresar opción: ");
         scanf("%d", &choice);
+        printf("\033[0m");
         if (choice == 1) {
             return 1;
         } else if (choice == 2) {
