@@ -136,10 +136,10 @@ int juego(void){
             printf(" ");
         }
         printf("\n");
-
+        printf("\033[0;35m");
         printf("\nQue letra quiere buscar: ");
         scanf(" %c", &buscar);
-
+        printf("\033[0m");
         // Looks for the same index, compares to random word, if true, replaces underscore with letter.
         for (int i = 0; i < length; i++) {
             if (buscar == palabra[i]) {
