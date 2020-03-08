@@ -216,21 +216,3 @@ int main(){
     return 0;
 }
 
-
-// Trabajo por hacer: 
-/*
- * Menu final ganaste / perdiste TERMINADO!
-
- * Limpiar la pantalla, sea con comandos de terminal o lineas nuevas TERMINADO !!!
- * Checkear el input del menu principal y asegurar que solo se puedan ingresar numeros TERMINADO!!!
- * Salir del juego al presionar 0 TERMINADO!!
- *
- * Extra:
- * Agregar colores a la terminal TERMINADO !
- * Opcion de agregar palabras al banco +
- * opcion de cambiar el numero de intentos por el jugador 
- * menu de opciones
- * Mejorar el sistema de aciertos e intentos
- * 
- */
-
