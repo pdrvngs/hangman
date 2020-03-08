@@ -233,7 +233,7 @@ int main(){
  * Salir del juego al presionar 0 TERMINADO!!
  *
  * Extra:
- * Agregar colores a la terminal 
+ * Agregar colores a la terminal  
  * Opcion de agregar palabras al banco +
  * opcion de cambiar el numero de intentos por el jugador 
  * menu de opciones
