@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+
 // I need string functions, strcpy
 // https://www.programiz.com/c-programming/library-function/string.h
 #include <string.h>
@@ -9,8 +9,6 @@
 // Macros https://gcc.gnu.org/onlinedocs/cpp/Object-like-Macros.html#Object-like-Macros
 // este macro dictara la cantidad maxima de palabras que habra en nuestro banco de palabras
 #define MAX_WORDS 23
-
-
 
 // # FUNCTION PROTOTYPES
 // defina aqui todos los prototipos de funciones que vaya a implementar.
@@ -35,7 +33,7 @@ const char *word_collection[MAX_WORDS]= {
                     "veintitres","python","java","adivinar"
                     };
 
-int intentos = 20;
+int intentos = 10;
 /*
  ? function get_random_word(), no recibe argumentos porque trabajara con la variable global word_collection (banco de palabras)
  ? y devolvera una palabra aleatoria del banco de palabras
@@ -166,7 +164,6 @@ int juego(void){
         fgets(nothing, 3, stdin);
         fgets(nothing, 3, stdin);
         clearscreen();
-
         return 1;
     } else {
 
@@ -186,7 +183,6 @@ int juego(void){
 
 
 int main(){
-    int resultado;
     int menu_val = 0;
 
     while(menu_val != 4) {
@@ -196,7 +192,7 @@ int main(){
                 printf("\033[1;34m");
                 printf("Comienza el juego\n");
                 printf("\033[0m");
-                resultado = juego(); // corre el juego cuando es igual a 1
+                juego();
                 break;
             case 2:
                 printf("\033[1;34m");
