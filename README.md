@@ -21,23 +21,16 @@ Para jugar, solo tiene que abrir su terminal y copiar el siguiente codigo
 ###### mac/linux <br>
 ```make run hangman.c```
 
+##### windows
+```gcc hangman.c -o hangman``` <br>
+```/hangman.out```
+
 
 ###### Navegación del Menu
 1. Comenzara el juego y tendra que adivinar una palabra
 2. Lo llevara a ver las instrucciones del juego
 3. Creditos a los creadores, librerias usadas, etc.
 4. Salir del juego, termina el porgrama
-
-<!---
-```
-puede utilizar una seccion de codigo
-```
----->
-### Extra Information
-
-```
-Agregue aqui lo que usted considere como extra
-```
 
 ## About
 ###### Contribuidores:
