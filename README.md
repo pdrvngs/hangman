@@ -21,7 +21,7 @@ Para jugar, solo tiene que abrir su terminal y copiar el siguiente codigo
 ###### mac/linux <br>
 ```make run hangman.c```
 
-##### windows
+###### windows
 ```gcc hangman.c -o hangman``` <br>
 ```/hangman.out```
 
