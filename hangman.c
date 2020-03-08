@@ -101,13 +101,14 @@ int juego(void){
     char nombre[55];
     char palabra[50];
     const char* random_word = get_random_word();
+    char nothing[3];
 
 
     // gets random word from word bank, copies it to random_word, gets length
     strcpy(palabra, random_word);
     length = strlen(palabra);
     printf("\033[0;34m");
-    printf("Ingrese nombre del jugador ");
+    printf("Ingrese nombre del jugador: ");
     printf("\033[0m");
     // Double fgets to pick up trailing whitespace due to scanf
     printf("\033[0;34m");
@@ -154,36 +155,32 @@ int juego(void){
     printf("\n\n");
     // Checks if you guessed or not.
     if(strcmp(underscored, palabra) == 0 || aciertos == length){
-        puts(palabra);
+
+        printf("      ¡Ganaste!      \n\n");
+        printf("Palabra adivinada: "); puts(palabra);
 
         //Aqui va el menu final ganador, Intentos, nombre, palabra: Y el ganaste
+        
+        printf("Jugador:"); fputs(nombre, stdout);
+        printf("Intentos: %d de %d\n", tries, intentos);
+        printf("Presione ENTER para regresar al menu\n");
+        fgets(nothing, 3, stdin);
+        fgets(nothing, 3, stdin);
+        clearscreen();
 
         return 1;
     } else {
 
         // Aqui va el menu final perdedor, intentos 10/10, nombre y palabra. Perdiste
-
+        printf("       Perdiste       \n\n");
+        printf("Palabra no adivinada: "); puts(palabra);
+        printf("Jugador:"); fputs(nombre, stdout);
+        printf("Intentos: %d de %d\n", tries, intentos);
+        printf("Presione ENTER para regresar al menu\n");
+        fgets(nothing, 3, stdin);
+        fgets(nothing, 3, stdin);
+        clearscreen();
         return 0;}
-}
-
-int menu_final(int gano){
-    char nothing[3];
-
-    if(gano == 1){
-        printf("Ganaste\nPresione ENTER para regresar al menu\n");
-        fgets(nothing, 3, stdin);
-        fgets(nothing, 3, stdin);
-        clearscreen();
-
-    }
-    else if(gano == 0){
-        printf("Perdiste\nPresione ENTER para regresar al menu\n");
-        fgets(nothing, 3, stdin);
-        fgets(nothing, 3, stdin);
-        clearscreen();
-    }
-
-    return 0;
 }
 
 
@@ -199,7 +196,6 @@ int main(){
                 printf("Comienza el juego\n");
                 printf("\033[0m");
                 resultado = juego(); // corre el juego cuando es igual a 1
-                menu_final(resultado);
                 break;
             case 2:
                 printf("\033[1;34m");
