@@ -32,7 +32,7 @@ const char *word_collection[MAX_WORDS]= {
                     "justicia","supercalifragilisticoespiralidoso","superheroe","circuito",
                     "arduino","concatenar","facil","palabra","lamborghini",
                     "banco","macroeconomia","destruccion","universidad","herigonza",
-                    "veintitres","python","java","adiviniar"
+                    "veintitres","python","java","adivinar"
                     };
 
 int intentos = 20;
