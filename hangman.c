@@ -154,16 +154,15 @@ int juego(void){
 
     printf("\n\n");
     // Checks if you guessed or not.
+    //menu final ganador, Intentos, nombre, palabra
     if(strcmp(underscored, palabra) == 0 || aciertos == length){
-
+        printf("\033[1;32m");
         printf("      ¡Ganaste!      \n\n");
         printf("Palabra adivinada: "); puts(palabra);
-
-        //Aqui va el menu final ganador, Intentos, nombre, palabra: Y el ganaste
-        
         printf("Jugador:"); fputs(nombre, stdout);
         printf("Intentos: %d de %d\n", tries, intentos);
         printf("Presione ENTER para regresar al menu\n");
+        printf("\033[0m");
         fgets(nothing, 3, stdin);
         fgets(nothing, 3, stdin);
         clearscreen();
@@ -171,12 +170,14 @@ int juego(void){
         return 1;
     } else {
 
-        // Aqui va el menu final perdedor, intentos 10/10, nombre y palabra. Perdiste
+        // menu final perdedor, intentos 10/10, nombre y palabra
+        printf("\033[1;31m");
         printf("       Perdiste       \n\n");
         printf("Palabra no adivinada: "); puts(palabra);
         printf("Jugador:"); fputs(nombre, stdout);
         printf("Intentos: %d de %d\n", tries, intentos);
         printf("Presione ENTER para regresar al menu\n");
+        printf("\033[0m");
         fgets(nothing, 3, stdin);
         fgets(nothing, 3, stdin);
         clearscreen();
