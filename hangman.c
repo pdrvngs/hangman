@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
+
 // I need string functions, strcpy
 // https://www.programiz.com/c-programming/library-function/string.h
 #include <string.h>
@@ -10,8 +10,6 @@
 // Macros https://gcc.gnu.org/onlinedocs/cpp/Object-like-Macros.html#Object-like-Macros
 // este macro dictara la cantidad maxima de palabras que habra en nuestro banco de palabras
 #define MAX_WORDS 23
-
-
 
 // # FUNCTION PROTOTYPES
 // defina aqui todos los prototipos de funciones que vaya a implementar.
@@ -170,7 +168,6 @@ int juego(void){
         fgets(nothing, 3, stdin);
         fgets(nothing, 3, stdin);
         clearscreen();
-
         return 1;
     } else {
 
@@ -190,7 +187,6 @@ int juego(void){
 
 
 int main(){
-    int resultado;
     int menu_val = 0;
 
     while(menu_val != 4) {
@@ -200,7 +196,7 @@ int main(){
                 printf("\033[1;34m");
                 printf("Comienza el juego\n");
                 printf("\033[0m");
-                resultado = juego(); // corre el juego cuando es igual a 1
+                juego();
                 break;
             case 2:
                 printf("\033[1;34m");
@@ -223,22 +219,4 @@ int main(){
     }
     return 0;
 }
-
-
-// Trabajo por hacer: 
-/*
- * Menu final ganaste / perdiste TERMINADO!
-
- * Limpiar la pantalla, sea con comandos de terminal o lineas nuevas TERMINADO !!!
- * Checkear el input del menu principal y asegurar que solo se puedan ingresar numeros TERMINADO!!!
- * Salir del juego al presionar 0 TERMINADO!!
- *
- * Extra:
- * Agregar colores a la terminal TERMINADO !
- * Opcion de agregar palabras al banco +
- * opcion de cambiar el numero de intentos por el jugador 
- * menu de opciones
- * Mejorar el sistema de aciertos e intentos
- * 
- */
 
