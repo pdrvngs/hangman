@@ -4,7 +4,8 @@
 // I need string functions, strcpy
 // https://www.programiz.com/c-programming/library-function/string.h
 #include <string.h>
-#include <time.h>
+//set seed
+#include <time.h>  
 
 // Macros https://gcc.gnu.org/onlinedocs/cpp/Object-like-Macros.html#Object-like-Macros
 // este macro dictara la cantidad maxima de palabras que habra en nuestro banco de palabras
@@ -26,7 +27,8 @@ void menu_opciones(void);
 // puede agregar hasta un maximo de MAX_WORDS palabras, si desea agregar mas de 23 palabras
 // modifique MAX_WORDS a la cantidad que se ajuste a sus necesidades.
 // ! NO AGREGUE PALABRAS QUE CONTENGAN NUMEROS
-// ? este es un arreglo de strings, un arreglo de punteros ;)
+// ? este es un arreglo de strings, un arreglo de punteros
+//aqui lee 23 donde dice max_words
 const char *word_collection[MAX_WORDS]= {
                     "ferrari","porsche","marroquin","libertad","cerveza",
                     "justicia","supercalifragilisticoespiralidoso","superheroe","circuito",
@@ -35,6 +37,7 @@ const char *word_collection[MAX_WORDS]= {
                     "veintitres","python","java","adivinar"
                     };
 
+//si se define antes se puede acceder todo
 int intentos = 20;
 /*
  ? function get_random_word(), no recibe argumentos porque trabajara con la variable global word_collection (banco de palabras)
@@ -131,7 +134,7 @@ int juego(void){
         printf("Palabra: \n\n");
         printf("\033[0m");
 
-        // Prints underscored.
+        // Prints underscored.imprime espacios entre los _.
         for (int i = 0; i < length; i++) {
             printf("%c", underscored[i]);
             printf(" ");
@@ -149,6 +152,7 @@ int juego(void){
                 } else {}
         }
         tries++;
+        //si ingreso el clearscreen aqui me limpia el juego cada vez que ingreso palabra.
         printf("\n");
     } // END OF WHILE
 
